@@ -1,4 +1,31 @@
 <header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gamified Learning Center</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <header>
+        <h1>Gamified Learning Center</h1>
+        <p>Strategic Simulations & Interactive Education</p>
+    </header>
+
+    <main class="app-grid">
+        <section class="card">
+            <h2>Legend of the Seven Stars</h2>
+            <p>A strategic logic engine simulating harmony and engagement metrics.</p>
+            <button onclick="location.href='/legend-seven-stars/'">Enter Simulation</button>
+        </section>
+
+        <section class="card">
+            <h2>The Revelation Journey</h2>
+            <p>Interactive modular testing engine for complex subject matter.</p>
+            <button onclick="location.href='/revelation-journey/'">Start Journey</button>
+        </section>
+    </main>
+</body>
+</html>
 
 <!--
   <<< Author notes: Course header >>>
