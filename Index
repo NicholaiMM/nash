@@ -24,4 +24,109 @@
         </section>
     </main>
 </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Engineering Data Networks</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 40px; max-width: 900px; }
+    h1, h2, h3 { color: #1a4b8c; }
+    pre { background: #f4f4f4; padding: 10px; border-radius: 6px; }
+</style>
+</head>
+<body>
+
+<h1>Engineering Data Networks</h1>
+
+<h2>Overview</h2>
+<p>Engineering Data Networks are the backbone of modern digital systems, enabling secure, scalable, and intelligent data flow across applications, services, and user interfaces. They support educational platforms, cloud services, and AI-enhanced workflows.</p>
+
+<h2>What Is an Engineering Data Network?</h2>
+<p>An Engineering Data Network (EDN) is a structured system that:</p>
+<ul>
+    <li>Moves data reliably</li>
+    <li>Enforces security and role-based access</li>
+    <li>Supports real-time updates</li>
+    <li>Integrates with cloud services and AI</li>
+    <li>Scales with user demand</li>
+</ul>
+
+<h3>Common Use Cases</h3>
+<ul>
+    <li>Educational platforms</li>
+    <li>Enterprise dashboards</li>
+    <li>Gamified learning systems</li>
+    <li>Simulation engines</li>
+    <li>Multi-user collaboration tools</li>
+</ul>
+
+<h2>Core Components</h2>
+
+<h3>1. Authentication & Identity Layer</h3>
+<ul>
+    <li>OAuth2</li>
+    <li>Firebase Auth</li>
+    <li>Azure AD</li>
+    <li>Role-based access control (RBAC)</li>
+    <li>Multi-tier admin systems</li>
+</ul>
+
+<h3>2. Data Transport Layer</h3>
+<ul>
+    <li>REST APIs</li>
+    <li>WebSockets</li>
+    <li>Serverless functions</li>
+    <li>Event-driven pipelines</li>
+</ul>
+
+<h3>3. Storage & Persistence Layer</h3>
+<ul>
+    <li>Firestore</li>
+    <li>Realtime Database</li>
+    <li>Cloud SQL</li>
+    <li>PostgreSQL</li>
+    <li>Cloud Storage / S3</li>
+</ul>
+
+<h3>4. AI & Automation Layer</h3>
+<ul>
+    <li>Copilot or Gemini integrations</li>
+    <li>Natural-language interfaces</li>
+    <li>Automated content generation</li>
+    <li>Adaptive learning engines</li>
+</ul>
+
+<h2>Example Architecture</h2>
+<pre>
+Client (Web/App) → Auth Layer → API Gateway → Cloud Functions → Database
+                                      ↓
+                                  AI Model
+</pre>
+
+<h2>Use Cases in Education</h2>
+<ul>
+    <li>Real-time student progress tracking</li>
+    <li>AI-generated quizzes and lessons</li>
+    <li>Secure teacher/admin dashboards</li>
+    <li>Multiplayer learning simulations</li>
+    <li>Narrative-driven educational games</li>
+</ul>
+
+<h2>Best Practices</h2>
+<ul>
+    <li>Design modular systems</li>
+    <li>Use least-privilege access</li>
+    <li>Log and monitor events</li>
+    <li>Keep AI interactions safe</li>
+    <li>Build for accessibility</li>
+</ul>
+
+<h2>Conclusion</h2>
+<p>Engineering Data Networks provide the structural foundation for modern educational technology. By combining secure data pipelines, cloud services, and AI-powered automation, they enable dynamic, playful, and personalized learning experiences.</p>
+
+</body>
+</html>
+
 </html>
