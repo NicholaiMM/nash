@@ -337,7 +337,7 @@ p  { line-height: 1.8; margin-bottom: .8rem; }
 
 /* ---------- Architecture diagram ---------- */
 .arch-pre {
-  font-family: 'Inter', monospace;
+  font-family: 'Courier New', 'Courier', monospace;
   font-size: .88rem;
   background: var(--surface2);
   border: 1px solid var(--border);
