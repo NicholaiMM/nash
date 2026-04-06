@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Mystery of the Seven Stars — Gamified Learning</title>
+  <meta name="description" content="The Mystery of the Seven Stars: an ethical narrative simulation exploring the seven principles of grace through gamified learning.">
+  <meta name="author" content="NicholaiMM">
+  <meta property="og:title" content="The Mystery of the Seven Stars">
+  <meta property="og:description" content="A narrative-driven ethical simulation exploring sacrifice, generosity, and the seven principles of grace.">
+  <meta property="og:url" content="https://gamifiedlearning.org/seven-stars.html">
+  <meta property="og:type" content="article">
+  <link rel="canonical" href="https://gamifiedlearning.org/seven-stars.html">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── Seven Stars extra theme ── */
+    .stars-hero {
+      background: linear-gradient(135deg, #0d0d2b 0%, #1a1464 50%, #2d006e 100%);
+      border-radius: var(--radius);
+      padding: 3.5rem 2.5rem 3rem;
+      color: #fff;
+      margin-bottom: 2.5rem;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .stars-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 30%, rgba(245,197,24,.25) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(111,66,255,.3) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .stars-hero h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1.6rem, 5vw, 2.8rem);
+      font-weight: 900;
+      margin-bottom: .6rem;
+      text-shadow: 0 0 20px rgba(245,197,24,.7);
+    }
+    .stars-hero p {
+      max-width: 600px;
+      margin: 0 auto;
+      opacity: .88;
+      font-size: 1.05rem;
+    }
+    .big-stars {
+      font-size: 2.2rem;
+      letter-spacing: .35em;
+      margin-bottom: 1rem;
+      display: block;
+      animation: twinkle 3s ease-in-out infinite alternate;
+    }
+
+    /* Seven principle cards */
+    .principle-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 1.2rem 0 2rem;
+    }
+    .principle-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.2rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .principle-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(245,197,24,.2);
+    }
+    .principle-card .star-num {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.8rem;
+      color: var(--star);
+      text-shadow: 0 0 10px rgba(245,197,24,.5);
+    }
+    .principle-card h3 {
+      margin: .4rem 0 .3rem;
+      font-size: .95rem;
+    }
+    .principle-card p {
+      font-size: .82rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* Game character panel */
+    .character-panel {
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      box-shadow: var(--shadow);
+    }
+    .character-panel img {
+      width: 220px;
+      border-radius: var(--radius);
+      flex-shrink: 0;
+      object-fit: contain;
+      background: #111;
+    }
+    .character-panel .char-info h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.1rem;
+      color: var(--accent2);
+      margin-bottom: .5rem;
+    }
+    .char-badge {
+      display: inline-block;
+      background: var(--accent2);
+      color: #fff;
+      font-size: .72rem;
+      padding: .2rem .7rem;
+      border-radius: 20px;
+      margin-bottom: .7rem;
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: .06em;
+    }
+
+    @media (max-width: 600px) {
+      .character-panel { flex-direction: column; }
+      .character-panel img { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== Top navigation bar ===== -->
+<header class="topbar">
+  <button class="hamburger" id="hamburger" aria-label="Toggle sidebar">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="brand">Gamified<span>Learning</span></div>
+  <button class="theme-toggle" id="themeToggle">🌙 Dark Mode</button>
+</header>
+
+<!-- ===== Layout ===== -->
+<div class="layout">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <nav>
+      <ul>
+        <li class="nav-section">Navigation</li>
+        <li><a href="index.html"><span class="icon">🏠</span> Home</a></li>
+        <li><a href="engineering-data-networks.html"><span class="icon">🔗</span> Engineering Data Networks</a></li>
+        <li><a href="seven-stars.html" class="active"><span class="icon">⭐</span> Mystery of the Seven Stars</a></li>
+
+        <li class="nav-section">On This Page</li>
+        <li><a href="#mission"><span class="icon">🎯</span> Mission</a></li>
+        <li><a href="#seven-stars-section"><span class="icon">✨</span> The Seven Stars</a></li>
+        <li><a href="#character"><span class="icon">🦸</span> Character</a></li>
+        <li><a href="#gallery-section"><span class="icon">🖼️</span> Gallery</a></li>
+        <li><a href="#play"><span class="icon">▶️</span> Play &amp; Download</a></li>
+
+        <li class="nav-section">Quick Links</li>
+        <li><a href="https://sites.google.com/view/nicholai/the-mystery-of-the-seven-stars" target="_blank" rel="noopener"><span class="icon">🌐</span> Game Site</a></li>
+        <li><a href="The Mystery of the Seven Stars.pdf" target="_blank"><span class="icon">📄</span> PDF Guide</a></li>
+        <li><a href="https://github.com/NicholaiMM/nash" target="_blank" rel="noopener"><span class="icon">💻</span> GitHub Repo</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Main -->
+  <main class="main">
+
+    <!-- Seven Stars hero -->
+    <div class="stars-hero">
+      <span class="big-stars">★ ★ ★ ★ ★ ★ ★</span>
+      <h1>The Mystery of the Seven Stars</h1>
+      <p>A narrative-driven ethical simulation where <em>Generosity</em> is the fundamental code and <em>Mercy</em> is a vital anomaly.</p>
+    </div>
+
+    <!-- Mission -->
+    <section id="mission">
+      <h2>Mission: Amazing Grace — The Matrix of Conscience</h2>
+      <p>
+        The mission of <strong>Amazing Grace: The Matrix of Conscience</strong> is to foster ethical literacy and
+        deep philosophical discussion through the power of interactive media. We create a transformative digital
+        environment where players explore the boundaries of morality by balancing collective duty with individual
+        sacrifice.
+      </p>
+      <div class="info-box">
+        <strong>Core Question:</strong> "Can digital sacrifice teach real-world compassion?"<br>
+        By navigating complex scenarios, players discover that even in a coded world, the human heart remains
+        the ultimate guide.
+      </div>
+    </section>
+
+    <!-- Seven Stars -->
+    <section id="seven-stars-section">
+      <h2>The Seven Stars — Principles of Grace</h2>
+      <p>Each star in the simulation represents a pillar of ethical living. Collect them all to unlock the Matrix of Conscience.</p>
+
+      <div class="principle-grid">
+        <div class="principle-card">
+          <div class="star-num">★ 1</div>
+          <h3>Generosity</h3>
+          <p>The fundamental code — give without expectation of return.</p>
+        </div>
+        <div class="principle-card">
+          <div class="star-num">★ 2</div>
+          <h3>Mercy</h3>
+          <p>A vital anomaly — choose compassion where logic demands judgment.</p>
+        </div>
+        <div class="principle-card">
+          <div class="star-num">★ 3</div>
+          <h3>Integrity</h3>
+          <p>Daily intentional acts maintain the health of the collective system.</p>
+        </div>
+        <div class="principle-card">
+          <div class="star-num">★ 4</div>
+          <h3>Sacrifice</h3>
+          <p>True progress sometimes demands giving up what you value most.</p>
+        </div>
+        <div class="principle-card">
+          <div class="star-num">★ 5</div>
+          <h3>Accessibility</h3>
+          <p>Empowering every learner, regardless of hardware or wealth.</p>
+        </div>
+        <div class="principle-card">
+          <div class="star-num">★ 6</div>
+          <h3>Grace</h3>
+          <p>The ultimate code — empower others to reach their full potential.</p>
+        </div>
+        <div class="principle-card">
+          <div class="star-num">★ 7</div>
+          <h3>Wisdom</h3>
+          <p>The mystery revealed — understanding that the journey is the reward.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Character showcase -->
+    <section id="character">
+      <h2>Character Spotlight</h2>
+      <div class="character-panel">
+        <img src="https://github.com/user-attachments/assets/28f1bf7f-d67b-4945-b79a-4adb0bdad1e0"
+             alt="Game character — cyber-armoured agent wielding lightning data streams and identity records"
+             loading="lazy">
+        <div class="char-info">
+          <span class="char-badge">PLAYABLE CHARACTER</span>
+          <h3>The Data Sentinel</h3>
+          <p>
+            Armed with the power to read, route, and redeem data streams, the Data Sentinel stands at the
+            crossroads of technology and conscience. Her red-star insignia marks the seven principles she
+            carries into every mission.
+          </p>
+          <p>
+            Wielding twin lightning arcs of structured information, she intercepts corrupted pipelines and
+            restores ethical integrity to the network — one decision at a time.
+          </p>
+          <ul>
+            <li><strong>Class:</strong> Network Architect / Moral Agent</li>
+            <li><strong>Special ability:</strong> Identity Reveal — exposes hidden actors in the data flow</li>
+            <li><strong>Weakness:</strong> Encounters where pure logic overrides compassion</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Photo gallery -->
+    <section id="gallery-section">
+      <h2>Community Gallery — Voice of Jesus Summer Camp</h2>
+      <p>These photos capture the real-world mission behind the simulation: bringing joy, learning, and grace to children who need it most.</p>
+      <div class="gallery">
+        <img src="https://github.com/user-attachments/assets/39c628ca-d6f4-43f1-9ee9-f617baa7161d"
+             alt="Summer camp — children engaged in outdoor learning activities"
+             loading="lazy">
+        <img src="https://github.com/user-attachments/assets/164f8177-95b3-4bce-be5a-bf4b476070fd"
+             alt="Summer camp — children gathered around activity tables with balloons"
+             loading="lazy">
+        <img src="https://github.com/user-attachments/assets/e9c570ee-bdf3-4c9b-8b67-c0baca1a46a3"
+             alt="Summer camp — children with yellow balloons at Living by Grace banner"
+             loading="lazy">
+        <img src="https://github.com/user-attachments/assets/afb2165e-6946-497c-b476-e2664c346790"
+             alt="Summer camp — wide outdoor view with children and colourful balloons"
+             loading="lazy">
+      </div>
+    </section>
+
+    <!-- Play / download -->
+    <section id="play">
+      <h2>Play &amp; Download</h2>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-icon">🌐</div>
+          <h3>Play Online</h3>
+          <p>Launch the simulation in your browser via the official game site.</p>
+          <a href="https://sites.google.com/view/nicholai/the-mystery-of-the-seven-stars" target="_blank" rel="noopener" class="btn">Play Now</a>
+        </div>
+        <div class="card">
+          <div class="card-icon">📄</div>
+          <h3>PDF Companion</h3>
+          <p>Download the full game guide and narrative walkthrough as a PDF.</p>
+          <a href="The Mystery of the Seven Stars.pdf" target="_blank" class="btn">Download PDF</a>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔗</div>
+          <h3>EDN Technical Docs</h3>
+          <p>Explore the Engineering Data Network architecture powering this simulation.</p>
+          <a href="engineering-data-networks.html" class="btn">Read EDN Docs</a>
+        </div>
+      </div>
+
+      <a class="download-link" href="The Mystery of the Seven Stars.pdf" target="_blank">
+        📄 The Mystery of the Seven Stars — Full PDF
+      </a>
+    </section>
+
+    <footer>
+      <p>© 2025 Gamified Learning · <a href="https://gamifiedlearning.org/">gamifiedlearning.org</a> ·
+        <a href="https://sites.google.com/view/nicholai/" target="_blank" rel="noopener">Project Site</a> ·
+        <a href="LICENSE">MIT License</a>
+      </p>
+    </footer>
+
+  </main>
+</div><!-- /.layout -->
+
+<script>
+  const toggle = document.getElementById('themeToggle');
+  const html   = document.documentElement;
+  const saved  = localStorage.getItem('theme') || 'light';
+  html.setAttribute('data-theme', saved);
+  toggle.textContent = saved === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode';
+
+  toggle.addEventListener('click', () => {
+    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    toggle.textContent = next === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode';
+  });
+
+  const hamburger = document.getElementById('hamburger');
+  const sidebar   = document.getElementById('sidebar');
+  hamburger.addEventListener('click', () => sidebar.classList.toggle('open'));
+  document.addEventListener('click', e => {
+    if (!sidebar.contains(e.target) && !hamburger.contains(e.target)) {
+      sidebar.classList.remove('open');
+    }
+  });
+</script>
+</body>
+</html>
