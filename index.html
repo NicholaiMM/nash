@@ -1,172 +1,152 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gamified Learning Center — Home</title>
-  <meta name="description" content="Gamified Learning Center: strategic simulations, ethical education, and interactive learning powered by Engineering Data Networks.">
+  <title>NicholaiMM — Project Hub</title>
+  <meta name="description" content="Welcome to the NicholaiMM project hub. Explore Gamify Learning, an arcade-style educational platform, and Amazing Grace Home Living, a professional residential home services site.">
   <meta name="author" content="NicholaiMM">
-  <!-- GitHub Pages / Open Graph -->
-  <meta property="og:title" content="Gamified Learning Center">
-  <meta property="og:description" content="Strategic Simulations &amp; Interactive Education">
-  <meta property="og:url" content="https://gamifiedlearning.org/">
-  <meta property="og:type" content="website">
-  <link rel="canonical" href="https://gamifiedlearning.org/">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    /* Hub-specific overrides */
+    body { display: flex; flex-direction: column; min-height: 100vh; }
+
+    .hub-header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem 2rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+    .hub-header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      color: var(--accent);
+      margin-bottom: .4rem;
+    }
+    .hub-header p {
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    .hub-main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1.5rem;
+      gap: 2rem;
+    }
+
+    .site-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .site-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: transform var(--transition), box-shadow var(--transition);
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .8rem;
+    }
+    .site-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px rgba(26,75,196,.2);
+      text-decoration: none;
+    }
+    .site-card .site-icon { font-size: 3rem; }
+    .site-card h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1rem;
+      color: var(--accent);
+      margin: 0;
+      padding: 0;
+      border: none;
+    }
+    .site-card p {
+      color: var(--muted);
+      font-size: .88rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .site-card .domain {
+      font-size: .78rem;
+      color: var(--accent2);
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: .06em;
+    }
+    .site-card .visit-btn {
+      display: inline-block;
+      margin-top: .5rem;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 8px;
+      padding: .5rem 1.2rem;
+      font-size: .82rem;
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: .04em;
+      transition: var(--transition);
+    }
+    .site-card:hover .visit-btn { background: var(--accent2); }
+
+    .hub-footer {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      border-top: 1px solid var(--border);
+      font-size: .8rem;
+      color: var(--muted);
+    }
+    .hub-footer a { color: var(--accent); }
+  </style>
 </head>
 <body>
 
-<!-- ===== Top navigation bar ===== -->
-<header class="topbar">
-  <button class="hamburger" id="hamburger" aria-label="Toggle sidebar">
-    <span></span><span></span><span></span>
-  </button>
-  <div class="brand">Gamified<span>Learning</span></div>
-  <button class="theme-toggle" id="themeToggle">🌙 Dark Mode</button>
+<header class="hub-header">
+  <h1>NicholaiMM · Project Hub</h1>
+  <p>Select a site to visit</p>
 </header>
 
-<!-- ===== Layout ===== -->
-<div class="layout">
+<main class="hub-main">
+  <div class="site-grid">
 
-  <!-- Sidebar -->
-  <aside class="sidebar" id="sidebar">
-    <nav>
-      <ul>
-        <li class="nav-section">Navigation</li>
-        <li><a href="index.html" class="active"><span class="icon">🏠</span> Home</a></li>
-        <li><a href="engineering-data-networks.html"><span class="icon">🔗</span> Engineering Data Networks</a></li>
-        <li><a href="seven-stars.html"><span class="icon">⭐</span> Mystery of the Seven Stars</a></li>
+    <a href="gamifylearning/index.html" class="site-card">
+      <div class="site-icon">🎮</div>
+      <h2>Gamify Learning</h2>
+      <p>An arcade-style educational platform featuring strategic simulations, ethical education, and interactive learning experiences.</p>
+      <span class="domain">gamifylearning.org</span>
+      <span class="visit-btn">Visit Site →</span>
+    </a>
 
-        <li class="nav-section">Quick Links</li>
-        <li><a href="https://sites.google.com/view/nicholai/" target="_blank" rel="noopener"><span class="icon">🌐</span> Project Site</a></li>
-        <li><a href="The Mystery of the Seven Stars.pdf" target="_blank"><span class="icon">📄</span> Seven Stars PDF</a></li>
-        <li><a href="https://github.com/NicholaiMM/nash" target="_blank" rel="noopener"><span class="icon">💻</span> GitHub Repo</a></li>
-      </ul>
-    </nav>
-  </aside>
+    <a href="amazinggracehomeliving/index.html" class="site-card">
+      <div class="site-icon">🏠</div>
+      <h2>Amazing Grace Home Living</h2>
+      <p>Professional residential home living services — cleaning, organization, personal care, and compassionate family support.</p>
+      <span class="domain">amazinggracehomeliving.com</span>
+      <span class="visit-btn">Visit Site →</span>
+    </a>
 
-  <!-- Main -->
-  <main class="main">
+  </div>
+</main>
 
-    <div class="stars-strip">
-      <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-    </div>
+<footer class="hub-footer">
+  <p>© 2025 NicholaiMM ·
+    <a href="https://github.com/NicholaiMM/nash" target="_blank" rel="noopener">GitHub Repo</a> ·
+    <a href="LICENSE">MIT License</a>
+  </p>
+</footer>
 
-    <div class="hero">
-      <h1>Gamified Learning Center</h1>
-      <p>Strategic Simulations &amp; Interactive Education — empowering students everywhere through play-driven ethical literacy.</p>
-    </div>
-
-    <h2>Our Mission</h2>
-    <p>
-      The mission of <strong>Amazing Grace: The Matrix of Conscience</strong> is to foster ethical literacy and deep
-      philosophical discussion through the power of interactive media. We aim to create a transformative digital
-      environment—a "Matrix of Conscience"—where players explore the boundaries of morality by balancing collective
-      duty with individual sacrifice.
-    </p>
-    <div class="info-box">
-      <strong>Core Question:</strong> "Can digital sacrifice teach real-world compassion?" — By challenging participants
-      to navigate complex scenarios where <em>Generosity</em> is the fundamental code and <em>Mercy</em> is a vital
-      anomaly, we prove that even in a coded world, the human heart remains the ultimate guide.
-    </div>
-
-    <h2>Core Objectives</h2>
-    <div class="card-grid">
-      <div class="card">
-        <div class="card-icon">📱</div>
-        <h3>Empowering Accessibility</h3>
-        <p>Mobile-friendly apps and educational games designed for students who cannot afford traditional computers.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">🌱</div>
-        <h3>Supporting the Next Generation</h3>
-        <p>Raising funds for the Voice of Jesus Summer Camp to support youth development and spiritual growth.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">⚖️</div>
-        <h3>Ethical Evolution</h3>
-        <p>High-impact Intervention Protocols to facilitate personal moral growth and the study of compassionate mercy.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">🤝</div>
-        <h3>Systemic Integrity</h3>
-        <p>Teaching that collective system health is maintained through daily, intentional acts of generosity.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">🕊️</div>
-        <h3>The Power of Grace</h3>
-        <p>Demonstrating that true compassion requires empowering others to reach their potential.</p>
-      </div>
-    </div>
-
-    <h2>Simulations &amp; Experiences</h2>
-    <div class="card-grid">
-      <div class="card">
-        <div class="card-icon">⭐</div>
-        <h3>Mystery of the Seven Stars</h3>
-        <p>A narrative-driven ethical simulation exploring sacrifice, generosity, and the seven principles of grace.</p>
-        <a href="seven-stars.html" class="btn">Enter Simulation</a>
-      </div>
-      <div class="card">
-        <div class="card-icon">🔗</div>
-        <h3>Engineering Data Networks</h3>
-        <p>The structural backbone powering secure, scalable, and AI-enhanced educational platforms.</p>
-        <a href="engineering-data-networks.html" class="btn">Explore EDN</a>
-      </div>
-      <div class="card">
-        <div class="card-icon">🗺️</div>
-        <h3>The Revelation Journey</h3>
-        <p>Interactive modular testing engine for complex subject matter and deep curriculum exploration.</p>
-        <a href="https://sites.google.com/view/nicholai/" target="_blank" rel="noopener" class="btn">Start Journey</a>
-      </div>
-    </div>
-
-    <h2>Vision for 2027</h2>
-    <p>
-      We are currently seeking partners to fund the <strong>2027 Global Sensor Network</strong> and expand our reach
-      in fostering ethical literacy through high-performance, state-driven web applications.
-    </p>
-    <div class="gallery">
-      <img src="https://github.com/user-attachments/assets/39c628ca-d6f4-43f1-9ee9-f617baa7161d" alt="Summer camp activity — children participating in outdoor learning games">
-      <img src="https://github.com/user-attachments/assets/164f8177-95b3-4bce-be5a-bf4b476070fd" alt="Summer camp — children gathered around activity tables">
-      <img src="https://github.com/user-attachments/assets/e9c570ee-bdf3-4c9b-8b67-c0baca1a46a3" alt="Summer camp — children with yellow balloons at Living by Grace event">
-      <img src="https://github.com/user-attachments/assets/afb2165e-6946-497c-b476-e2664c346790" alt="Summer camp — wide view of children playing with balloons outdoors">
-    </div>
-
-    <footer>
-      <p>© 2025 Gamified Learning · <a href="https://gamifiedlearning.org/">gamifiedlearning.org</a> ·
-        <a href="https://sites.google.com/view/nicholai/" target="_blank" rel="noopener">Project Site</a> ·
-        <a href="LICENSE">MIT License</a>
-      </p>
-    </footer>
-
-  </main>
-</div><!-- /.layout -->
-
-<script>
-  // Dark mode
-  const toggle = document.getElementById('themeToggle');
-  const html   = document.documentElement;
-  const saved  = localStorage.getItem('theme') || 'light';
-  html.setAttribute('data-theme', saved);
-  toggle.textContent = saved === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode';
-
-  toggle.addEventListener('click', () => {
-    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    html.setAttribute('data-theme', next);
-    localStorage.setItem('theme', next);
-    toggle.textContent = next === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode';
-  });
-
-  // Hamburger / sidebar
-  const hamburger = document.getElementById('hamburger');
-  const sidebar   = document.getElementById('sidebar');
-  hamburger.addEventListener('click', () => sidebar.classList.toggle('open'));
-  document.addEventListener('click', e => {
-    if (!sidebar.contains(e.target) && !hamburger.contains(e.target)) {
-      sidebar.classList.remove('open');
-    }
-  });
-</script>
 </body>
 </html>
